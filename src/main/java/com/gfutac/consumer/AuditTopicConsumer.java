@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 public class AuditTopicConsumer {
 
     @JmsListener(destination = "${topics.audit.name}")
-    public void onMessage(String content) {
+    public void onReceivedAuditMessage(String content) {
         // for now just log it. in future - elasticsearch?
-        log.info(content);
+        log.info("{}", content);
     }
 }
