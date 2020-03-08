@@ -1,6 +1,8 @@
 package com.gfutac.consumer;
 
+import com.gfutac.service.ElasticService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
@@ -8,9 +10,11 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class AuditTopicConsumer {
 
+    @Autowired
+    private ElasticService elasticService;
+
     @JmsListener(destination = "${topics.audit.name}")
     public void onReceivedAuditMessage(String content) {
-        // for now just log it. in future - elasticsearch?
-        log.info("{}", content);
+        this.elasticService.saveAuditEntry(content);
     }
 }
