@@ -51,4 +51,8 @@ public class ElasticService {
 
         return this.auditEntityElasticRepository.findByEntityTypeAndEntityKey(entityType, entityKey, sort);
     }
+
+    public void deleteAll() {
+        this.auditEntityElasticRepository.deleteAll();
+    }
 }
