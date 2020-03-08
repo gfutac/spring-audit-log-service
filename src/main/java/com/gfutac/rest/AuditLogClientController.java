@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/audit-log/v1", produces = MediaType.APPLICATION_JSON_VALUE)
-public class ElasticClientController {
+public class AuditLogClientController {
 
     @Autowired
     private ElasticService elasticService;
