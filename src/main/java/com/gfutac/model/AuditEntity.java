@@ -25,6 +25,6 @@ public class AuditEntity {
     private String entityType;
     private EntityStateChangeType entityStateChangeType;
     private Instant entityStateChangeTime;
-    private HashMap<String, String> entity;
-    private Serializable entityKey;
+    private HashMap<String, Object> entity;
+    private Object entityKey;
 }

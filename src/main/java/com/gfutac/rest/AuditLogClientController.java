@@ -30,7 +30,7 @@ public class AuditLogClientController {
 
     // region entry
     @GetMapping(value = "/entry")
-    public List<AuditEntity> findByTypeAndKey(@RequestParam() String entityType, @RequestParam() Serializable entityKey) {
+    public List<AuditEntity> findByTypeAndKey(@RequestParam() String entityType, @RequestParam() Object entityKey) {
         return this.elasticService.findByTypeAndId(entityType, entityKey);
     }
     // endregion

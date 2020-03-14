@@ -24,6 +24,7 @@ public class ElasticService {
     private ObjectMapper mapper;
 
     public AuditEntity saveAuditEntry(String content) {
+        log.info("{}", content);
 
         AuditEntity entity = null;
 
@@ -43,7 +44,7 @@ public class ElasticService {
         return result;
     }
 
-    public List<AuditEntity> findByTypeAndId(String entityType, Serializable entityKey) {
+    public List<AuditEntity> findByTypeAndId(String entityType, Object entityKey) {
         var sort = Sort
                 .sort(AuditEntity.class)
                 .by(AuditEntity::getEntityStateChangeTime)
