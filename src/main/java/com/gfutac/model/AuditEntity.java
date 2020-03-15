@@ -7,7 +7,6 @@ import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
-import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashMap;
 
